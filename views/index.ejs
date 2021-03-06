@@ -11,15 +11,34 @@
 <body>
     <header>
         <nav>
-            <p>navbar</p>
+            <ul>
+                <li class = 'brand-name'>BRAND NAME</li>
+                <li>About Us</li>
+            </ul>
+            <ul class = 'nav-right'>
+                <% if (locals.session.loggedin) { %>
+                    <li><%= locals.session.userName %> </li>
+                    <a href="/logout"><li>Log Out</li></a>
+                <% } else { %>
+                    <a href="/signup"><li>Sign Up</li></a>
+                    <a href="/login"><li>Login</li></a>
+                <% } %> 
+            </ul>
         </nav>
     </header>
+    <!-- <div></div>
+    <form class = "sign-up-form" action="/signup" method="POST">
+        <h1>Sign Up</h1>
+        <input name = "user[userName]" type="text" placeholder="Enter username">
+        <input name = "user[password]" type="password" placeholder="Enter password">
+        <input type="submit">
+    </form> -->
     <main>
         <section id = "searchSection">
             <h1>Search</h1>
             <form action="/searches">
                 <input id = "search" name = "search" type="text" autocomplete="off">
-            <ul></ul>
+            <ul id = "searchMenu"></ul>
         </form>
         </section>
     </main>

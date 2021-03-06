@@ -4,8 +4,40 @@ html,body{
     flex-direction: column;
 }
 header, footer{
-    height:7vh;
+    min-height:7vh;
+    max-height: 7vh;
     background:gray;
+}
+header{
+    display:flex;
+    flex-direction: column;
+    justify-content: center;
+}
+header>nav{
+    display:flex;
+    justify-content: space-between;
+    align-items: center;
+}
+header>nav>ul{
+    display: inline-flex;
+    align-items: center;
+    height:100%;
+}
+header>nav>ul>*{
+    padding: 0.75vw 1.5vw;
+    font-size: 1.2vw;
+    margin: 0 0.25vw;
+    cursor: pointer;
+}
+body>div{
+    width:0;
+    height:0;
+}
+.brand-name~li:hover, .nav-right>*:hover{
+    background:white;
+}
+.brand-name{
+    font-size:2vw;
 }
 main{
     position: relative;
@@ -44,7 +76,7 @@ form>input{
 form>input:focus{
     outline: none;
 }
-ul{
+#searchMenu{
     position: absolute;
     display:flex;
     flex-direction: column;
@@ -56,7 +88,7 @@ ul{
     background-color: whitesmoke;
     overflow-y: scroll;
 }
-ul>li{
+#searchMenu>li{
     justify-content: space-between;
     display: flex;
     align-items: center;
@@ -64,7 +96,27 @@ ul>li{
     padding: 2% 3%;
 }
 
-img{
+#searchMenu>li>img{
     width:10%;
     max-height:100%;
+}
+.cover{
+    position: absolute;
+    top:0;
+    left:0;
+    background-color: black;
+    opacity: 0.5;
+    width:100%;
+    height:100%;
+    z-index:10;
+}
+.sign-up-form{
+    display:flex;
+    flex-direction: column;
+    padding:2vw;
+    z-index:20;
+}
+a{
+    text-decoration: none;
+    color:black;
 }

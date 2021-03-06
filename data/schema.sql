@@ -1,0 +1,17 @@
+DROP TABLE IF EXISTS account CASCADE;
+DROP TABLE IF EXISTS game;
+
+CREATE TABLE IF NOT EXISTS account(
+    id SERIAL PRIMARY KEY NOT NULL,
+    userName VARCHAR(255) NOT NULL,
+    password VARCHAR(255) NOT NULL,
+    isLoggedIn BOOLEAN NOT NULL,
+    CONSTRAINT account_name UNIQUE (userName)
+);
+
+CREATE TABLE IF NOT EXISTS game(
+    id SERIAL PRIMARY KEY NOT NULL,
+    score VARCHAR(255) NOT NULL,
+    user_id INT NOT NULL,
+    CONSTRAINT fkey_user FOREIGN KEY (user_id) REFERENCES account(id)
+);
