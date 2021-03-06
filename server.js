@@ -10,7 +10,7 @@ require('dotenv').config();
 const app = express();
 // process.env.DATABASE_URL
 // { connectionString: process.env.DATABASE_URL,   ssl: { rejectUnauthorized: false } }
-const client = new pg.Client(process.env.DATABASE_URL);
+const client = new pg.Client({ connectionString: process.env.DATABASE_URL,   ssl: { rejectUnauthorized: false } });
 
 app.use(express.static('public'))
 app.use(express.urlencoded({extended:true}))
