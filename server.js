@@ -41,7 +41,7 @@ app.get('/searches', (req, res) =>{
         }
         return superAgent.get(url).query(query).then(data =>{
             res.send(data.body)
-        }).catch(error => console.log('error'))
+        }).catch(error => console.log('error', error))
     }
     
 })
