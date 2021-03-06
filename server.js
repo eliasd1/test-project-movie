@@ -105,7 +105,7 @@ function isLoggedIn(user){
     let checkIfLoggedIn = 'SELECT isLoggedIn FROM account WHERE userName = $1 AND password = $2'
     return client.query(checkIfLoggedIn, [user.userName, user.password]).then(data =>{
         if(data.rows.length > 0){
-            console.log('USER LOGGED IN STATUS ', data.rows[0].isLoggedIn)
+            console.log('USER LOGGED IN STATUS ', data.rows[0])
             return data.rows[0].isLoggedIn;
         } else{
             return null;
