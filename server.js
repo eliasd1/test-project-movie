@@ -48,7 +48,7 @@ app.get('/searches', (req, res) =>{
 
 app.get('/signup', (req, res) =>{
     if(!req.session.loggedin){
-        res.render('signup');
+        res.render('signUp');
     } else{
         res.redirect('/')
     }
